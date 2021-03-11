@@ -1,3 +1,4 @@
+import 'bulmaswatch/superhero/bulmaswatch.min.css';
 import ReactDom from 'react-dom';
 import * as esbuild from 'esbuild-wasm';
 import { useState, useEffect, useRef } from 'react';
@@ -70,13 +71,11 @@ const App = () => {
 
   return (
     <div>
-      <CodeEditor />
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <textarea
-          style={{ minHeight: 200 }}
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-        />
+      <CodeEditor
+        onChange={(value) => setInput(value)}
+        initialValue='// Начните писать код!'
+      />
+      <div>
         <button style={{ margin: '10px 0px 10px 0px' }} onClick={onClick}>
           Submit
         </button>
