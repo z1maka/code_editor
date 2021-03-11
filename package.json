@@ -10,6 +10,9 @@
     "@types/node": "^12.20.4",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.1",
+    "axios": "^0.21.1",
+    "esbuild-wasm": "0.8.27",
+    "localforage": "^1.9.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.3",
@@ -39,5 +42,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/localforage": "^0.0.34",
+    "prettier": "^2.2.1"
   }
 }
