@@ -3,6 +3,7 @@ import * as esbuild from 'esbuild-wasm';
 import { useState, useEffect, useRef } from 'react';
 import { unpkgPathPlugin } from './plugins/unpkg-path-plugin';
 import { fetchPlugin } from './plugins/fetch-plugin';
+import CodeEditor from './components/CodeEditor';
 
 const App = () => {
   const ref = useRef<any>();
@@ -69,10 +70,16 @@ const App = () => {
 
   return (
     <div>
-      <textarea value={input} onChange={(e) => setInput(e.target.value)} />
-      <div>
-        <p>submit11</p>
-        <button onClick={onClick}>Submit</button>
+      <CodeEditor />
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <textarea
+          style={{ minHeight: 200 }}
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+        />
+        <button style={{ margin: '10px 0px 10px 0px' }} onClick={onClick}>
+          Submit
+        </button>
       </div>
 
       <div>
