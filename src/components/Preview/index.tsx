@@ -1,10 +1,11 @@
+import './preview.css';
 import React, { useRef, useEffect } from 'react';
 
 interface PreviewProps {
   code: string;
 }
 
-const Preview: React.FC<PreviewProps> = ({ code }) => {
+const Index: React.FC<PreviewProps> = ({ code }) => {
   useEffect(() => {
     iFrameRef.current.srcdoc = html;
     iFrameRef.current.contentWindow.postMessage(code, '*');
@@ -13,12 +14,14 @@ const Preview: React.FC<PreviewProps> = ({ code }) => {
   const iFrameRef = useRef<any>();
 
   return (
-    <iframe
-      title='preview'
-      srcDoc={html}
-      sandbox='allow-scripts'
-      ref={iFrameRef}
-    />
+    <div className='preview-wrapper'>
+      <iframe
+        title='preview'
+        srcDoc={html}
+        sandbox='allow-scripts'
+        ref={iFrameRef}
+      />
+    </div>
   );
 };
 
@@ -42,4 +45,4 @@ const html = `
     </html>
   `;
 
-export default Preview;
+export default Index;

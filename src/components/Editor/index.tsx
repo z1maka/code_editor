@@ -12,7 +12,7 @@ interface CodeEditorProps {
   onChange(value: string): void;
 }
 
-const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) => {
+const Index: React.FC<CodeEditorProps> = ({ initialValue, onChange }) => {
   const editorRef = useRef<any>();
 
   const onEditorDidMount: EditorDidMount = (getValue, monacoEditor) => {
@@ -73,7 +73,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) => {
         value={initialValue}
         theme='dark'
         language='javascript'
-        height='500px'
+        height='100%'
         options={{
           wordWrap: 'on',
           minimap: { enabled: false },
@@ -89,4 +89,4 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) => {
   );
 };
 
-export default CodeEditor;
+export default Index;
